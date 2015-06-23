@@ -1,3 +1,5 @@
 function login() {
-    // todo
+    var x = User();
+    x.login();
+    return x;
 }
