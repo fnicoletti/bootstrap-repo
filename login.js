@@ -1,5 +1,5 @@
 function login() {
-    var x = User();
+    var x = new User();
     x.login();
     return x;
 }

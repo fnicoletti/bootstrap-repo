@@ -1,0 +1,35 @@
+<!-- custom page the goal is to creating a form to inserte some information about a credit card -->
+
+<form name="form" novalidate>
+  <div>
+    <label>Visa</label>
+    <input type="radio" name="typeCard"/>
+    <label>Mastercard</label>
+    <input type="radio" name="typeCard"/>
+  </div>
+  <div>
+    <label>Nome (come compare sulla Carta di Credito)</label>
+    <input ng-model="cc.userName" name="userName"/>
+  </div>
+  <div>
+    <label>Numero Carta di Credito (senza spazi o trattini)</label>
+    <!--<input ng-model="user.number" min="0" max="10" name="usernu" type="number"/>
+      <span ng-show="form.usernu.$error.min || form.user.number.$error.max">The value must be in range 0 to 10!</span>-->
+    <input ng-model="cc.userNumber" name="usernu1" credit-card-spaces required/>
+      <span ng-show="form.usernu1.$error.creditCardVal">The value is not valid!</span>
+      <span ng-show="form.usernu1.$error.required">The value is required!</span>
+  </div>
+  <div>
+    <label>Data di scadenza</label>
+    <select id="select-months">
+      <option ng-repeat="month in cc.months">{{month}}</option>
+    </select>
+    <select id="select-years">
+      <option ng-repeat="year in cc.years">{{year}}</option>
+    </select>
+  </div>
+  <input type="submit" ng-click="cc.update()" value="Save"/>
+  <pre>userName = {{cc.userName | json}}</pre>
+  <input type="button" ng-click="cc.getDat()" value="Get Data"/>
+  <pre>ccDat = {{cc.ccDat | json}}</pre>
+</form>
