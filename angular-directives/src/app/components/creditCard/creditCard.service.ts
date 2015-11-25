@@ -6,7 +6,7 @@ export interface ICreditCardData {
 }
 
 export class CreditCardService {
-  private ccData : ICreditCardData;
+  public ccData : ICreditCardData;
 
   constructor () {
 
