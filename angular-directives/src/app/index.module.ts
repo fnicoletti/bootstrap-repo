@@ -6,10 +6,15 @@ import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { GithubContributor } from '../app/components/githubContributor/githubContributor.service';
 import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
+
+// custom service for get data
 import { CreditCardService } from '../app/components/creditCard/creditCard.service';
 import { acmeNavbar } from '../app/components/navbar/navbar.directive';
+// custom directives
 import { creditCard } from '../app/components/creditCard/creditCard.directive';
 import { creditCardSpaces } from '../app/components/creditCard/creditCardSpaces.directive';
+// end custom directives
+
 import { acmeMalarkey } from '../app/components/malarkey/malarkey.directive';
 
 declare var malarkey: any;

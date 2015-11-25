@@ -16,7 +16,7 @@ export class CreditCardController {
       name: 'Pep',
       number: '1600'
     };*/
-    this.userName = 'pipo';
+    this.userName = 'foo';
     this.months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
     this.years = ['2015', '2016', '2017', '2018', '2019'];
     this.ccDatServ = CreditCardSer;
@@ -32,10 +32,10 @@ export class CreditCardController {
 
 }
 
-// "restrict" significa che la direttiva può essere limitata ad A (attributi), E (elementi), C (classi)
-// di default è A ed E
-// "controller" permette di definire il controller da usare nella direttiva
-// "controllerAs" è un'alias per richiamare i componenti del controller, nel nostro caso cc.months, cc.update...
+// "restrict" means that directive can be limited to A (attributes), E (element), C (class)
+// by default it has A and E
+// "controller" allow to define the controller to use in the directive
+// "controllerAs" is an alias to call the controller components (cc.months, cc.update)
 
 /** @ngInject */
 export function creditCard(): ng.IDirective {

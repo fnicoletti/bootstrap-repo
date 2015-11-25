@@ -1,7 +1,7 @@
-/** @ngInject */
+// "require" is similar to "controller" and allow to call a default controller, built-in
+// "link" allow to call a function that will manipulate the DOM
 
-// "require" simile all'attributo "controller" permette di richiamare un controller di default, built-in
-// "link" peremette di richiamare una funzione che manipolerà il dom
+/** @ngInject */
 export function creditCardSpaces(): ng.IDirective {
 
   return {
@@ -10,9 +10,9 @@ export function creditCardSpaces(): ng.IDirective {
   };
 }
 
-// qui il controller è ngModel perchè ho messo require nella direttiva
-// quando uso require definisco il controller altrimenti si usa il controller
-// della direttiva vedi la direttiva creditCard che usa l'opzione "controller"
+// here the controller is ngModel since we have require into the directive
+// when I use require I define the controller else I use the controller of the directive
+// for more info, see the directive creditCard where we use "controller"
 function spacesFunc(scope : ng.IScope, elm : JQuery, attrs : ng.IAttributes, ctrl : any) {
 
   var INTEGER_REGEXP = /^\-?\d+$/;
@@ -25,11 +25,9 @@ function spacesFunc(scope : ng.IScope, elm : JQuery, attrs : ng.IAttributes, ctr
 
     if (INTEGER_REGEXP.test(viewValue)) {
       // it is valid
-      console.log('int>>>');
       return true;
     }
 
-    console.log('invalid>>>');
     // it is invalid
     return false;
   };

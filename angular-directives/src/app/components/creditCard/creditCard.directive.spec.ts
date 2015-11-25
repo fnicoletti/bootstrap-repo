@@ -1,19 +1,19 @@
-// in typescript posso scrivere anche codice javascript. typescript estende javascript
-// var porta le variabili ad essere tutte globali non hanno uno scope
-// let permette di definire le variabili con scope
-// const definisco delle costanti
-// let e const sono comunque keywords javascript
+// in typescript we can write javascript, typescript extend javascript
+// var do the variables global without a scope
+// let allow a variable to have a scope
+// const is used for the constants
+// let e const are javascript keywords
 
-// invece di () => posso anche scrivere function()
-// () => è una forma contratta che permette solo typescript
+// we can write () => instead of function()
+// () => is a contraction allowed only in typescript
+
 describe('Unit testing', () => {
   let $compile: ng.ICompileService;
   let $rootScope: ng.IRootScopeService;
   let element: ng.IAugmentedJQuery;
   let scope: any;
 
-  // questa riga deve esserci sempre
-  // angularDirectives è il nome dell'applicazione
+  // the follow row is always necessary, angularDirectives is the name of the application
   beforeEach(angular.mock.module('angularDirectives'));
 
   // store references to $rootScope and $compile
@@ -47,7 +47,6 @@ describe('Unit testing', () => {
 
   it('should change the input text when model changes', () => {
     const value = 'Giuseppe Trigiante';
-    // expect(cc.userName).toBeFalsy();
 
     var input = angular.element(element.find('input')[2]);
     input.val(value);

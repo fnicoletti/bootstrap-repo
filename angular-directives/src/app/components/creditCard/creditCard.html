@@ -1,3 +1,5 @@
+<!-- custom page the goal is to creating a form to inserte some information about a credit card -->
+
 <form name="form" novalidate>
   <div>
     <label>Visa</label>
@@ -28,6 +30,6 @@
   </div>
   <input type="submit" ng-click="cc.update()" value="Save"/>
   <pre>userName = {{cc.userName | json}}</pre>
-  <input type="button" ng-click="cc.getDat()" value="Save"/>
+  <input type="button" ng-click="cc.getDat()" value="Get Data"/>
   <pre>ccDat = {{cc.ccDat | json}}</pre>
 </form>

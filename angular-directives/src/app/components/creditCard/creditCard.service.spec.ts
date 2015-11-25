@@ -6,7 +6,6 @@ describe('service creditCard', () => {
 
   let $compile: ng.ICompileService;
   let $rootScope: ng.IRootScopeService;
-  let creditCardServ : CreditCardService;
 
   beforeEach(angular.mock.module('angularDirectives'));
 
@@ -15,13 +14,5 @@ describe('service creditCard', () => {
     expect(CreditCardSer).not.toEqual(null);
   }));
 
-  /*beforeEach(inject((creditCardServPar: CreditCardService) => {
-
-    creditCardServ = creditCardServPar;
-  }));
-
-  it('should be not null', () => {
-    expect(creditCardServ).not.toEqual(null);
-  });*/
 
 });
