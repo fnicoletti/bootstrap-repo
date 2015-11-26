@@ -9,9 +9,10 @@ export class CreditCardController {
   public userName: String;
   public ccDatServ : CreditCardService;
   public ccDat : ICreditCardData;
+  private httpService: ng.IHttpService;
 
   /* @ngInject */
-  constructor(CreditCardSer : CreditCardService) {
+  constructor(CreditCardSer : CreditCardService, $http: ng.IHttpService) {
     /*this.customer = {
       name: 'Pep',
       number: '1600'
@@ -20,6 +21,7 @@ export class CreditCardController {
     this.months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
     this.years = ['2015', '2016', '2017', '2018', '2019'];
     this.ccDatServ = CreditCardSer;
+    this.httpService = $http;
   }
 
   update() {
@@ -27,7 +29,7 @@ export class CreditCardController {
   }
 
   getDat() {
-    this.ccDat = this.ccDatServ.dat;
+    this.ccDat = this.ccDatServ.getDat(this.httpService);
   }
 
 }
