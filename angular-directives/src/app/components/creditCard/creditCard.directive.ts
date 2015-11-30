@@ -1,7 +1,11 @@
 
 import {CreditCardService, ICreditCardData} from './creditCard.service';
 
-
+/** @ngInject
+ *
+ * Define the creditCard controller.
+ *
+ */
 export class CreditCardController {
 
   public months: any;
@@ -11,7 +15,6 @@ export class CreditCardController {
   public ccDat : ICreditCardData;
   private httpService: ng.IHttpService;
 
-  /* @ngInject */
   constructor(CreditCardSer : CreditCardService, $http: ng.IHttpService) {
     /*this.customer = {
       name: 'Pep',
@@ -39,7 +42,11 @@ export class CreditCardController {
 // "controller" allow to define the controller to use in the directive
 // "controllerAs" is an alias to call the controller components (cc.months, cc.update)
 
-/** @ngInject */
+/** @ngInject
+ *
+ * Define the creditCard directive.
+ *
+ */
 export function creditCard(): ng.IDirective {
 
   return {

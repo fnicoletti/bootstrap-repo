@@ -7,7 +7,7 @@
 // we can write () => instead of function()
 // () => is a contraction allowed only in typescript
 
-describe('Unit testing', () => {
+describe('creditCard testing', () => {
   let $compile: ng.ICompileService;
   let $rootScope: ng.IRootScopeService;
   let element: ng.IAugmentedJQuery;

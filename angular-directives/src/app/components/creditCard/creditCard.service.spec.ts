@@ -12,7 +12,9 @@ describe('service creditCard', () => {
 
   beforeEach(angular.mock.module('angularDirectives'));
 
-  beforeEach(inject(($compile: ng.ICompileService, $rootScope: ng.IRootScopeService, CreditCardSer: CreditCardService, _$httpBackend_, _$http_) => {
+  beforeEach(inject(($compile: ng.ICompileService, $rootScope: ng.IRootScopeService,
+                     CreditCardSer: CreditCardService, _$httpBackend_ : ng.IHttpBackendService,
+                     _$http_ : ng.IHttpService) => {
     // the injector unwraps the underscores (_) from around the parameter names when matching
     element = angular.element('<credit-card></credit-card>');
 
@@ -44,11 +46,12 @@ describe('service creditCard', () => {
     let resp : ICreditCardData = <ICreditCardData>{};
 
     http.get('http://localhost:3000/data.json')
-      .success(function(data, status, headers, config) {
+      .success(function(data : any) {
         resp = (<ICreditCardData> data);
       })
-      .error(function(data, status, headers, config) {
-      });
+      .error(function(data : any) {
+        console.log('errorHttp>>>')
+    });
 
     httpbackend
       .when('GET', 'http://localhost:3000/data.json')
@@ -57,17 +60,15 @@ describe('service creditCard', () => {
         'number': 2310987623451233,
         'expMonth': 11,
         'expYear': 2016
-      });
+    });
 
-    httpbackend.flush();
+      httpbackend.flush();
 
     expect(resp).toEqual({
-       'name': 'Mario Rossi',
-       'number': 2310987623451233,
-       'expMonth': 11,
-       'expYear': 2016
-     });
+      'name': 'Mario Rossi',
+      'number': 2310987623451233,
+      'expMonth': 11,
+      'expYear': 2016
+    });
   })
-
-
 });
