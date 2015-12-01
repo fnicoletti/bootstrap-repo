@@ -10,10 +10,10 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    // 'browserName': 'chrome'
-    browserName: 'phantomjs',
+    'browserName': 'chrome'
+    /*browserName: 'phantomjs',
     version: '',
-    platform: 'ANY'
+    platform: 'ANY'*/
   },
 
   baseUrl: 'http://localhost:3000',

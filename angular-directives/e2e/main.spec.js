@@ -1,6 +1,6 @@
 'use strict';
 
-describe('The main view', function () {
+/*describe('The main view', function () {
   var page;
 
   beforeEach(function () {
@@ -18,4 +18,4 @@ describe('The main view', function () {
     expect(page.thumbnailEls.count()).toBeGreaterThan(5);
   });
 
-});
+});*/
